@@ -1,17 +1,18 @@
-//  Write a recursive program which accept number from user and return summation of that number
-//  Input : 789
-//  output : 24
+//  Write a recursive program which accept String from user and count number of character
+//  Input : Hello
+//  output : 5
 
 #include<iostream>
 using namespace std;
 
-int Strlen(char iNo[])
+int Strlen(char ch[])
 {
     static int iCount = 0;
-    while(*iNo != '\0')
+    if(*ch != '\0')
     {
         iCount++;
-        iNo++;
+        ch++;
+        Strlen(ch);
     }
     return iCount;
 }
