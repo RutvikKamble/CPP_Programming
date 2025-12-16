@@ -9,7 +9,7 @@ void Display()
     static int iCnt = 0;
     static char ch = 'a';
 
-    while(iCnt < 6)
+    if(iCnt < 6)
     {
         cout<<ch<<"\t";
         iCnt++;
