@@ -11,7 +11,7 @@ void Display(int iNo)
     static int iCnt = 0;
     static char ch = 'A';
 
-    while(iCnt != iNo)
+   if(iCnt != iNo)
     {
         cout<<ch<<"\t";
         iCnt++;
