@@ -8,7 +8,7 @@ void Display()
 {
     static int iCnt = 5;
 
-    while(iCnt > 0)
+    if(iCnt > 0)
     {
         cout<<iCnt<<"\t";
         iCnt--;
