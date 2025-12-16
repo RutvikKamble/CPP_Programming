@@ -9,7 +9,7 @@ void Display(int iNo)
 {
     static int iCnt = iNo;
 
-    while(iCnt > 0)
+    if(iCnt > 0)
     {
         cout<<iCnt<<"\t*\t";
         iCnt--;

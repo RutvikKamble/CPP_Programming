@@ -8,10 +8,11 @@ using namespace std;
 int Summation(int iNo)
 {
     static int iSum = 0;
-    while(iNo != 0)
+    if(iNo != 0)
     {
         iSum = iSum + (iNo % 10);
         iNo = iNo / 10;
+        Summation(iNo);
     }
     return iSum;
 }
