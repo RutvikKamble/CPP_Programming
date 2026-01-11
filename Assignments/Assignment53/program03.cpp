@@ -11,7 +11,7 @@ void Display(T *Arr, int iNo)
     for(iCnt = 0; iCnt < iNo; iCnt++)
     {
         cout<<Arr[iCnt];
-        cout<<"\t";
+        cout<<"\t"; 
     }
     cout<<"\n";
 }
@@ -25,6 +25,7 @@ T SecondMax(T *Arr, int iSize)
     if(iSize == 1)
     {
         cout<<"Array contain only one element";
+        return;
     }
     else
     {
