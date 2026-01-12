@@ -1,4 +1,4 @@
-// Write generic program to find second largest element.
+// Write generic program to find sum of all odd element
 
 #include<iostream>
 using namespace std;
@@ -17,38 +17,28 @@ void Display(T *Arr, int iNo)
 }
 
 template<class T>
-T SecondMax(T *Arr, int iSize)
+T SumOdd(T *Arr, int iSize)
 {
     int iCnt = 0;
-    T Max = T(), SecMax = T();
+    T iSum = T();
 
-    if(iSize == 1)
+    for(iCnt = 0; iCnt < iSize; iCnt++)
     {
-        cout<<"Array contain only one element";
-    }
-    else
-    {
-        for(iCnt = 0; iCnt < iSize; iCnt++)
+        if((Arr[iCnt] % 2) != 0)
         {
-            if(Arr[iCnt] > Max)
-            {
-                SecMax = Max;
-                Max = Arr[iCnt];
-            }
-            else if(Arr[iCnt] > SecMax && Arr[iCnt] != Max)
-            {
-                SecMax = Arr[iCnt];
-            }
+            iSum = iSum + Arr[iCnt];
         }
     }
-    return SecMax;
+
+    return iSum;
 }
 
 int main()
 {
-    int *Arr = nullptr;
+    int *Arr = nullptr;  
     
-    int iCnt = 0, iSize = 0, iValue = 0, iRet = 0;
+    int iCnt = 0, iSize = 0;
+    int iRet = 0;
 
     cout<<"Enter the number how many value that you print : ";
     cin>>iSize;
@@ -63,12 +53,10 @@ int main()
 
     Display(Arr, iSize);
 
-    iRet = SecondMax(Arr, iSize);
+    iRet = SumOdd(Arr, iSize);
 
-    cout<<"The second largest number from the array is : "<<iRet;
-
-
+    cout<<"Sum of all odd elements : "<<iRet;
+    
     delete []Arr;
-
     return 0;
 }
