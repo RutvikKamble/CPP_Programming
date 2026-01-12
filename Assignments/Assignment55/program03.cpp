@@ -1,74 +1,38 @@
-// Write generic program to find second largest element.
+// Write generic program to to perform Division of two number.
 
 #include<iostream>
 using namespace std;
 
 template<class T>
-void Display(T *Arr, int iNo)
+T Division(T No1, T No2)
 {
-    int iCnt = 0;
+    T Ans = T();
 
-    for(iCnt = 0; iCnt < iNo; iCnt++)
+    if(No2 == T())
     {
-        cout<<Arr[iCnt];
-        cout<<"\t";
+        cout<<"Division is not poassible by Zero...";
+        return T();
     }
-    cout<<"\n";
-}
 
-template<class T>
-T SecondMax(T *Arr, int iSize)
-{
-    int iCnt = 0;
-    T Max = T(), SecMax = T();
-
-    if(iSize == 1)
-    {
-        cout<<"Array contain only one element";
-    }
-    else
-    {
-        for(iCnt = 0; iCnt < iSize; iCnt++)
-        {
-            if(Arr[iCnt] > Max)
-            {
-                SecMax = Max;
-                Max = Arr[iCnt];
-            }
-            else if(Arr[iCnt] > SecMax && Arr[iCnt] != Max)
-            {
-                SecMax = Arr[iCnt];
-            }
-        }
-    }
-    return SecMax;
+    Ans = No1 / No2;
+    
+    return Ans;
 }
 
 int main()
 {
-    int *Arr = nullptr;
-    
-    int iCnt = 0, iSize = 0, iValue = 0, iRet = 0;
+    int iValue1 = 0, iValue2 = 0, iRet = 0;
 
-    cout<<"Enter the number how many value that you print : ";
-    cin>>iSize;
+    cout<<"Enter the first value : ";
+    cin>>iValue1;
 
-    Arr = new int[iSize];
+    cout<<"Enter the second value : ";
+    cin>>iValue2;
 
-    for(iCnt = 0; iCnt < iSize; iCnt++)
-    {
-        cout<<"Enter number : ";
-        cin>>Arr[iCnt];
-    }
+    iRet = Division(iValue1,iValue2);
 
-    Display(Arr, iSize);
+    cout<<"Division of above two nubmers : "<<iRet;
 
-    iRet = SecondMax(Arr, iSize);
-
-    cout<<"The second largest number from the array is : "<<iRet;
-
-
-    delete []Arr;
 
     return 0;
 }
