@@ -1,8 +1,7 @@
-// Write generic to check whether array is sorted
+// Write generic program to to perform substraction of two number
 
 #include<iostream>
 using namespace std;
-
 
 template<class T>
 void Display(T *Arr, int iNo)
@@ -17,107 +16,30 @@ void Display(T *Arr, int iNo)
     cout<<"\n";
 }
 
-
 template<class T>
-void CheckSort(T *Arr, int iSize)
+T Substraction(T No1, T No2)
 {
-    int iCnt = 0;
+    T Ans = T();
+
+    Ans = No1 - No2;
     
-    bool isAscending = true;
-    bool isDescending = true;
-
-    for(iCnt = 0; iCnt < iSize-1; iCnt++)
-    {
-        if(Arr[iCnt] > Arr[iCnt + 1])
-        {
-            isAscending = false;
-        }
-
-        if(Arr[iCnt] < Arr[iCnt + 1])
-        {
-            isDescending = false;
-        }
-    }
-
-    if(isAscending == true)
-    {
-        cout << "Array is sorted in Ascending order";
-    }
-    else if(isDescending == true)
-    {
-        cout << "Array is sorted in Descending order";
-    }
-    else
-    {
-        cout << "Array is not sorted";
-    }
+    return Ans;
 }
-
-/*
-template<class T>
-void CheckSort(T *Arr, int iSize)
-{
-    int iCnt = 0, iCheck = 0;
-    int iCount1 = 0, iCount2 = 0;
-
-    iCheck = Arr[0];
-
-    for(iCnt = 0; iCnt < iSize; iCnt++)
-    {
-        if(Arr[iCnt] >= iCheck)
-        {
-            iCheck = Arr[iCnt];
-            iCount1++;
-        }
-    }
-
-    for(iCnt = 0; iCnt < iSize; iCnt++)
-    {
-        if(Arr[iCnt] <= iCheck)
-        {
-            iCheck = Arr[iCnt];
-            iCount2++;
-        }
-    }
-    
-    if(iCount1 == iSize)
-    {
-        cout<<"Array is sorted in the Ascending order";
-    }
-    else if (iCount2 == iSize)
-    {
-        cout<<"Array is sorted in the Decending order";
-    }
-    else
-    {
-        cout<<"Array is not sorted";
-    }   
-}
-*/
 
 int main()
 {
-    int *Arr = nullptr;
-    
-    int iCnt = 0, iSize = 0, iValue = 0;
+    int iValue1 = 0, iValue2 = 0, iRet = 0;
 
-    cout<<"Enter the number how many value that you print : ";
-    cin>>iSize;
+    cout<<"Enter the first value : ";
+    cin>>iValue1;
 
-    Arr = new int[iSize];
+    cout<<"Enter the second value : ";
+    cin>>iValue2;
 
-    for(iCnt = 0; iCnt < iSize; iCnt++)
-    {
-        cout<<"Enter number : ";
-        cin>>Arr[iCnt];
-    }
+    iRet = Substraction(iValue1,iValue2);
 
-    Display(Arr, iSize);
+    cout<<"Substraction of above two nubmers : "<<iRet;
 
-    CheckSort(Arr, iSize);
-
-
-    delete []Arr;
 
     return 0;
 }
